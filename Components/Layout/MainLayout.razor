@@ -1,0 +1,73 @@
+﻿@inherits LayoutComponentBase
+
+<RadzenLayout Style="position: relative;grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
+    <RadzenHeader Style="width: 100%;" class="bg-success text-white">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
+            <RadzenLabel Text="Header" />
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar Responsive="true" @bind-Expanded="@sidebarExpanded" style="position: absolute; z-index: 3">
+        <RadzenStack AlignItems="AlignItems.Start" class="rz-p-2">
+            <RadzenButton Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Success" Click="@(() => sidebarExpanded = false)" />
+        </RadzenStack>
+        <RadzenStack AlignItems="AlignItems.Center" class="rz-mx-auto rz-my-3" Gap="0.5rem">
+            <RadzenImage Path="https://avatar.iran.liara.run/public/35" Style="width: 12rem;" AlternateText="avatar" />
+           
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem" Style="padding: 0.5rem;">
+           
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
+                    <RadzenText><strong>Rank</strong> </RadzenText>
+                    <RadzenText class="rz-font-weight-light" Text="1" />
+                </RadzenStack>
+               
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Style="border-left: 1px solid #ddd; height: 2rem; margin: 0 0.5rem;">
+                </RadzenStack>
+
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
+                    <RadzenText><strong>Commends</strong></RadzenText>
+                    <RadzenText class="rz-font-weight-light" Text="50" />
+                </RadzenStack>
+
+               
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Style="border-left: 1px solid #ddd; height: 2rem; margin: 0 0.5rem;">
+                </RadzenStack>
+
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
+                    <RadzenText><strong>Points</strong></RadzenText>
+                    <RadzenText Class="rz-font-weight-light" Text="1200" />
+                </RadzenStack>
+            </RadzenStack>
+
+
+        </RadzenStack>
+        <RadzenPanelMenu>
+            <RadzenPanelMenuItem Text="Home" Icon="home" Path="/home" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Leaderboards" Icon="assessment" Path="/leaderboards" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Quests" Icon="assignment_late" Path="/quests" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Profile" Icon="account_circle" Path="/profile" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Commend" Icon="done" Path="/Commends" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Help" Icon="help" Path="/help" Click="@(() => sidebarExpanded = false)" />
+        </RadzenPanelMenu>
+        <RadzenFooter>
+            <RadzenPanelMenuItem Text="Logout" Icon="exit_to_app" Path="/" Click="@(() => sidebarExpanded = false)" />
+        </RadzenFooter>
+    </RadzenSidebar>
+    <RadzenBody style="overflow-x: hidden;">
+        @Body
+    </RadzenBody>
+    @if (sidebarExpanded)
+    {
+        <div @onclick="@(() => sidebarExpanded = false)" class="rz-dialog-mask" style="position: absolute; z-index: 2"></div>
+    }
+</RadzenLayout>
+
+@code {
+    bool sidebarExpanded { get; set; }
+
+    protected override void OnInitialized()
+    {
+        sidebarExpanded = false;
+        base.OnInitialized();
+    }
+}

@@ -1,0 +1,74 @@
+﻿@inject NavigationManager NavigationManager
+
+@page "/"
+
+<RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center" class="w-100" Style="height: 100vh">
+    <RadzenStack class="rz-my-12 rz-mt-5 rz-mx-auto rz-border-radius-6 rz-shadow-10"
+                 style="width: calc(100% - 40px); max-width: 400px; overflow: hidden; margin: 0 20px;">
+        <RadzenCard class="rz-shadow-0 rz-border-radius-0 rz-background-color-success rz-p-12" style="text-align: center;">
+            <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" class="rz-strong rz-color-white rz-mb-0">Login</RadzenText>
+        </RadzenCard>
+
+        <div class="rz-p-0 rz-p-12">
+            <RadzenTemplateForm TItem="Model" Data=@model Submit=@OnSubmit InvalidSubmit=@OnInvalidSubmit>
+                <RadzenStack Gap="1rem" class="rz-p-m-12">
+                    <RadzenFormField Text="Username" Variant="@variant">
+                        <ChildContent>
+                            <RadzenTextBox Name="UserName" @bind-Value=@model.UserName class="w-100 w-md-50" />
+                        </ChildContent>
+                        <Helper>
+                            <RadzenRequiredValidator Component="UserName" Text="Username is required." />
+                        </Helper>
+                    </RadzenFormField>
+                    <RadzenFormField Text="Password" Variant="@variant">
+                        <ChildContent>
+                        <RadzenPassword Name="Password" @bind-Value=@model.Password class="w-100 w-md-50" />
+                        </ChildContent>
+                        <Helper>
+                            <RadzenRequiredValidator Component="Password" Text="Password is required." />
+                        </Helper>
+                    </RadzenFormField>
+                    <RadzenRow JustifyContent="JustifyContent.SpaceBetween">
+                        <RadzenButton ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Success" Text="Login" class="btn btn-success"/>
+                        <a href="" class="text-success">Forgot Password?</a>
+
+                    </RadzenRow>
+                </RadzenStack>
+            </RadzenTemplateForm>
+        </div>
+
+    </RadzenStack>
+</RadzenStack>
+
+@code {
+    [Inject]
+    NotificationService _NotifService { get; set; } = default!; 
+    Variant variant = Variant.Outlined;
+
+    class Model
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
+
+    Model model = new Model();
+
+    void OnSubmit(Model model)
+    {
+        _NotifService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Duration = 40000,
+                SummaryContent = ns =>@<RadzenText TextStyle="TextStyle.H6">Logged in<br /> @DateTime.Now</RadzenText>   ,
+                DetailContent = ns =>@<RadzenButton Text="Clear" Click="@(args => ns.Messages.Clear())" />
+         });
+
+        NavigationManager.NavigateTo("/home");
+        //console.Log($"Submit: {JsonSerializer.Serialize(model, new JsonSerializerOptions() { WriteIndented = true })}");
+    }
+
+    void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
+    {
+        //console.Log($"InvalidSubmit: {JsonSerializer.Serialize(args, new JsonSerializerOptions() { WriteIndented = true })}");
+    }
+}
