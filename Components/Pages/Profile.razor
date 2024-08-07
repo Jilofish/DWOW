@@ -1,5 +1,120 @@
 ﻿@page "/profile"
 @layout MainLayout
 
-<h1>Profile</h1>
 
+<RadzenCard Style="max-width: 600px; margin: auto; padding: 2rem;">
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="1rem">
+        <!-- Avatar Image -->
+        <RadzenImage Path="@UserProfile.AvatarUrl" Style="width: 150px; height: 150px; border-radius: 50%;" AlternateText="Profile Avatar" />
+        <RadzenButton Icon="camera_alt" Text="Change Avatar" ButtonStyle="ButtonStyle.Success" Click="@ChangeAvatar" class=" rz-border-radius-5" />
+        <RadzenUpload Accept="image/*" Visible="false" @ref="avatarUpload" Change="OnAvatarUpload" />
+
+        <!-- Employee Details (Read-only) -->
+        <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="width: 100%;" Gap="0.5rem">
+            <RadzenText Class="rz-font-weight-bold" Text="Employee Name:" />
+            <RadzenText Class="rz-font-weight-light" Text="@UserProfile.EmployeeName" />
+
+            <RadzenText Class="rz-font-weight-bold" Text="Employee ID:" />
+            <RadzenText Class="rz-font-weight-light" Text="@UserProfile.EmployeeID" />
+
+            <RadzenText Class="rz-font-weight-bold" Text="Email:" />
+            <RadzenText Class="rz-font-weight-light" Text="@UserProfile.Email" />
+
+            <RadzenText Class="rz-font-weight-bold" Text="Address:" />
+            <RadzenText Class="rz-font-weight-light" Text="@UserProfile.Address" />
+        </RadzenStack>
+
+        <!-- Change Password Button -->
+        <RadzenButton Icon="lock" Text="Change Password" ButtonStyle="ButtonStyle.Success" Click="@OpenChangePasswordModal" class="rz-mt-2 rz-border-radius-5" />
+    </RadzenStack>
+</RadzenCard>
+
+<!-- Change Password Modal -->
+@if (isChangePasswordModalVisible)
+{
+    <div class="modal-backdrop"></div>
+    <div class="modal" style="display: block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Password</h5>
+                    <button type="button" class="btn-close" aria-label="Close" @onclick="CloseChangePasswordModal"></button>
+                </div>
+                <div class="modal-body">
+                    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Gap="0.5rem">
+                        <RadzenText Class="rz-font-weight-bold" Text="New Password:" />
+                        <RadzenPassword @bind-Value="NewPassword" Style="width: 100%;" />
+
+                        <RadzenText Class="rz-font-weight-bold" Text="Confirm Password:" />
+                        <RadzenPassword @bind-Value="ConfirmPassword" Style="width: 100%;" />
+                    </RadzenStack>
+                </div>
+                <div class="modal-footer">
+                    <RadzenButton Icon="save" Text="Save" ButtonStyle="ButtonStyle.Success" Click="@SaveNewPassword" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private RadzenUpload avatarUpload;
+    private bool isChangePasswordModalVisible = false;
+
+    private UserProfileModel UserProfile = new UserProfileModel
+    {
+        AvatarUrl = "https://avatar.iran.liara.run/public/35", // Default avatar
+        EmployeeName = "John Louis",
+        EmployeeID = "21-0859-0201",
+        Email = "employee@gmail.com",
+        Address = "PH numba wan"
+    };
+
+    private string NewPassword { get; set; }
+    private string ConfirmPassword { get; set; }
+
+    private void ChangeAvatar()
+    {
+        avatarUpload.Upload();
+    }
+
+    private void OnAvatarUpload(UploadChangeEventArgs e)
+    {
+        // Assuming the upload is successful and you get the new image URL
+        // For this example, we'll just use the same avatar URL
+        UserProfile.AvatarUrl = "new-image-url"; // Replace with actual uploaded image URL
+    }
+
+    private void OpenChangePasswordModal()
+    {
+        isChangePasswordModalVisible = true;
+    }
+
+    private void CloseChangePasswordModal()
+    {
+        isChangePasswordModalVisible = false;
+    }
+
+    private void SaveNewPassword()
+    {
+        if (NewPassword == ConfirmPassword)
+        {
+            // Save the new password logic
+            // Close the modal
+            CloseChangePasswordModal();
+        }
+        else
+        {
+            // Show an error message or validation
+        }
+    }
+
+    public class UserProfileModel
+    {
+        public string AvatarUrl { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeID { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+    }
+}

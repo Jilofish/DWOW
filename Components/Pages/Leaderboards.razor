@@ -1,4 +1,95 @@
 ﻿@page "/leaderboards"
 @layout MainLayout
+@inject DialogService DialogService
 
-<h1>Leaderboards</h1>
+@inject IEmployeeService _EmployeeService
+
+<RadzenCard Style="max-width: 800px; margin: auto;">
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0.5rem" class="w-100">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem">
+            <RadzenText Class="rz-font-weight-bold" Text="Leaderboards" />
+            <RadzenIcon Icon=@(showTop3 ? "expand_less" : "expand_more") @onclick="ToggleTop3" />
+        </RadzenStack>
+
+        <RadzenStack AlignItems="AlignItems.Center" Gap="1rem" Style="position: relative;" class="w-100">
+            <RadzenDataList TItem="Employee" Data="TopEmployees.Take(3)" WrapItems="true" Visible="@showTop3" Style="position: sticky; top: 0; z-index: 99" class="w-100">
+                <Template Context="employee">
+                    <RadzenCard Style=@($"border: 2px solid; border-color: {(employee.Rank == 1 ? "gold" : employee.Rank == 2 ? "silver" : employee.Rank == 3 ? "#CD7F32" : "#006400")}; cursor: pointer; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.8); width: 100%;") @onclick="@(() => ShowEmployeeDetails(employee))">
+                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" class="w-100">
+                            <RadzenImage Path="@employee.Avatar" Style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
+                            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="flex: 1;">
+                                <RadzenText TextStyle="TextStyle.H5" Text="@employee.Name" />
+                                <RadzenText>Points: @employee.Points</RadzenText>
+                            </RadzenStack>
+                            <RadzenText TextStyle="TextStyle.H5" Style="flex: 0 0 25px; text-align: center;">#@employee.Rank</RadzenText>
+                        </RadzenStack>
+                    </RadzenCard>
+                </Template>
+            </RadzenDataList>
+
+            <RadzenDataList TItem="Employee" Data="TopEmployees.Skip(3)" WrapItems="true" class="w-100">
+                <Template Context="employee">
+                    <RadzenCard Style=@($"border: 2px solid; border-color: {(employee.Rank == 1 ? "gold" : employee.Rank == 2 ? "silver" : employee.Rank == 3 ? "#CD7F32" : "#006400")}; cursor: pointer;") @onclick="@(() => ShowEmployeeDetails(employee))"
+                                class="w-100">
+                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" class="w-100">
+                            <RadzenImage Path="@employee.Avatar" Style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
+                            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="flex: 1;">
+                                <RadzenText TextStyle="TextStyle.H5" Text="@employee.Name" />
+                                <RadzenText>Points: @employee.Points</RadzenText>
+                            </RadzenStack>
+                            <RadzenText TextStyle="TextStyle.H5" Style="flex: 0 0 25px; text-align: center;">#@employee.Rank</RadzenText>
+                        </RadzenStack>
+                    </RadzenCard>
+                </Template>
+            </RadzenDataList>
+        </RadzenStack>
+    </RadzenStack>
+</RadzenCard>
+
+@code {
+    private List<Employee> TopEmployees { get; set; }
+
+    private bool showTop3 = true;
+
+    private void ToggleTop3()
+    {
+        showTop3 = !showTop3;
+    }
+
+    protected override void OnInitialized()
+    {
+        TopEmployees ??= [];
+        // Sort employees by Points and assign ranks
+        TopEmployees = _EmployeeService.GetAllEmployees()
+            .OrderByDescending(e => e.Points)
+            .Select((e, index) => { e.Rank = index + 1; return e; })
+            .ToList();
+    }
+
+    private async Task ShowEmployeeDetails(Employee employee)
+    {
+        await DialogService.OpenAsync("Employee Details", ds =>
+        @<div>
+            <RadzenCard Style="width: 100%; max-width: 400px; margin: auto;">
+                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0.5rem">
+                    <RadzenImage Path="@employee.Avatar" Style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
+                <RadzenText TextStyle="TextStyle.H4">#@employee.Rank</RadzenText>
+                <RadzenText TextStyle="TextStyle.H6">@employee.Name</RadzenText>
+                
+                <RadzenRow class="w-100">
+                    <RadzenColumn Size="6">
+                        <RadzenStack AlignItems="AlignItems.Center" class="w-100">
+                            <RadzenText>Points: @employee.Points</RadzenText>
+                        </RadzenStack>
+                    </RadzenColumn>
+                    <RadzenColumn Size="6">
+                        <RadzenStack AlignItems="AlignItems.Center" class="w-100">
+                            <RadzenText>Commends: @employee.TotalCommends</RadzenText>
+                        </RadzenStack>
+                    </RadzenColumn>
+                </RadzenRow>
+                </RadzenStack>
+            </RadzenCard>
+    </div>, new DialogOptions { Width = "400px", Height = "400px", CloseDialogOnOverlayClick = true, });
+    }
+}

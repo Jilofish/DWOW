@@ -1,4 +1,68 @@
 ﻿@page "/quests"
+@using DWOW.Models
 @layout MainLayout
 
-<h1>Quests</h1>
+@inject DialogService DialogService
+@inject IQuestService _QuestService
+
+<RadzenCard Style="max-width: 800px; margin: auto;">
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0.75rem" class="">
+        <RadzenText Class="rz-font-weight-bold" Text="Quests" />
+        <RadzenRow>
+            @foreach (var quest in QuestsList)
+            {
+                <RadzenColumn Size="6" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                    <RadzenCard @onclick="@(() => ShowQuestDetails(quest))" Style="width: calc(100% - 0.5rem); cursor: pointer;">
+                        <RadzenImage Path="@quest.ImageUrl" Style="width: 100%; height: 150px; object-fit: cover;" AlternateText="Quest Image" />
+                        <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start">
+                            <RadzenText Class="rz-font-weight-bold" Text="@quest.Code" />
+                            <RadzenText Class="rz-font-weight-light" Text="@quest.Name" />
+                        </RadzenStack>
+                    </RadzenCard>
+                </RadzenColumn>
+            }
+        </RadzenRow>
+    </RadzenStack>
+</RadzenCard>
+
+@code {
+    private List<Quest> QuestsList => _QuestService.GetQuests();
+
+    async Task ShowQuestDetails(Quest quest)
+    {
+        SelectedQuest = quest;
+        await DialogService.OpenAsync("Quest Details", ds =>
+    @<div>
+        <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0.5rem">
+            <RadzenImage Path="@SelectedQuest?.ImageUrl" Style="width: 100%; height: 200px;" AlternateText="Quest Image" />
+
+            <RadzenRow class="w-100">
+                <RadzenColumn Size="6">
+                    <RadzenStack AlignItems="AlignItems.Center" class="w-100">
+                        <RadzenText><strong>Quest Code:</strong></RadzenText>
+                        <RadzenText TextStyle="TextStyle.H5" Text="@SelectedQuest?.Code" />
+                    </RadzenStack>
+                </RadzenColumn>
+
+                <RadzenColumn Size="6">
+                    <RadzenStack AlignItems="AlignItems.Center" class="w-100">
+                        <RadzenText><strong>Quest Name: </strong></RadzenText>
+                        <RadzenText TextStyle="TextStyle.H5" Text="@SelectedQuest?.Name" />
+                    </RadzenStack>
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenStack>
+                <RadzenText class="rz-mt-3"><strong>Criteria:</strong></RadzenText>
+                <RadzenText class="rz-font-weight-light rz-px-3" Text="@SelectedQuest?.Criteria" />
+            </RadzenStack>
+        </RadzenStack>
+    </div>, new DialogOptions() 
+          {
+              CloseDialogOnOverlayClick = true,
+              CssClass = "custom-dialog-class",
+              WrapperCssClass = "custom-dialog-wrapper-class"
+          });
+    }
+
+    private Quest SelectedQuest;
+}

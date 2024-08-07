@@ -1,4 +1,55 @@
 ﻿@page "/commends"
 @layout MainLayout
 
-<h1>Commends</h1>
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+@inject IEmployeeService _EmployeeService
+
+<div class="container">
+    <RadzenDataGrid TItem="Employee" Data="@employees" RowSelect="OnRowSelect">
+        <Columns>
+            <RadzenDataGridColumn TItem="Employee" Property="Name" Title="Name" />
+            <RadzenDataGridColumn TItem="Employee" Title="Commend">
+                <Template Context="employee">
+                    <RadzenButton ButtonStyle="ButtonStyle.Success" class="rz-border-radius-5" Icon="star" Text="Commend" Click="@(args => OnCommendClick(employee))" Disabled="@IsCommendButtonDisabled(employee)" />
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+</div>
+
+@code {
+    private List<Employee> employees => _EmployeeService.GetAllEmployees();
+    
+    private DateTime? lastCommendationDate;
+    private bool isCommendationConfirmed = false;
+
+    private async Task OnCommendClick(Employee employee)
+    {
+        if (lastCommendationDate == null || (DateTime.Now - lastCommendationDate.Value).TotalDays >= 30)
+        {
+            bool commended = await DialogService.Confirm("Confirm Commendation") ?? false;
+            if (commended)
+            {
+                lastCommendationDate = DateTime.Now;
+                isCommendationConfirmed = true;
+                // Todo: Logic add commend date or another data set for commended employees
+            }
+        }
+        else
+        {
+            NotificationService.Notify(NotificationSeverity.Warning, "Commendation", "You can only commend one employee per month.", 3000);
+        }
+    }
+
+    private bool IsCommendButtonDisabled(Employee employee)
+    {
+        return isCommendationConfirmed || (lastCommendationDate.HasValue && (DateTime.Now - lastCommendationDate.Value).TotalDays < 30);
+    }
+
+    private void OnRowSelect(Employee employee)
+    {
+        // Handle row select if needed
+    }
+}
+

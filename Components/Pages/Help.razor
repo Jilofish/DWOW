@@ -1,4 +1,57 @@
 ﻿@page "/help"
 @layout MainLayout
 
-<h1>Help</h1>
+<div class="rz-p-sm-12">
+
+    <h3>Frequently Asked Questions (FAQs)</h3>
+
+    <!-- FAQ Section -->
+    <RadzenAccordion Multiple="true">
+        <Items>
+        @foreach (var faq in FAQs)
+        {
+            <RadzenAccordionItem Text="@faq.Question" Icon="help_outline"
+                                 CollapseTitle="Collapse this FAQ."
+                                 ExpandTitle="Expand this FAQ."
+                                 CollapseAriaLabel=@($"Collapse the FAQ about {@faq.Question}.")
+                                 ExpandAriaLabel=@($"Expand the FAQ about {@faq.Question}.")>
+                <p>@faq.Answer</p>
+            </RadzenAccordionItem>
+        }
+        </Items>
+    </RadzenAccordion>
+
+</div>
+
+@code {
+    private List<FAQ> FAQs = new List<FAQ>
+    {
+        new FAQ
+        {
+            Question = "How do I get started with the app?",
+            Answer = "To get started, download the app and create an account. Follow the setup wizard to configure your preferences."
+        },
+        new FAQ
+        {
+            Question = "How can I reset my password?",
+            Answer = "If you forget your password, use the 'Forgot Password' link on the login page to reset it via email."
+        },
+        new FAQ
+        {
+            Question = "Where can I find my account settings?",
+            Answer = "Account settings can be found under the 'Profile' section of the app."
+        },
+        new FAQ
+        {
+            Question = "How do I contact support?",
+            Answer = "You can contact support via phone at +1-800-123-4567 or email us at support@example.com."
+        }
+    };
+
+    public class FAQ
+    {
+        public string Question { get; set; }
+        public string Answer { get; set; }
+    }
+}
+

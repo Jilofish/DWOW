@@ -1,10 +1,13 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject IEmployeeService _EmployeeService
 
+<RadzenComponents />
 <RadzenLayout Style="position: relative;grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
     <RadzenHeader Style="width: 100%;" class="bg-success text-white">
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
             <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
-            <RadzenLabel Text="Header" />
+            <RadzenLabel Text="@HeaderText" />
         </RadzenStack>
     </RadzenHeader>
     <RadzenSidebar Responsive="true" @bind-Expanded="@sidebarExpanded" style="position: absolute; z-index: 3">
@@ -12,13 +15,13 @@
             <RadzenButton Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Success" Click="@(() => sidebarExpanded = false)" />
         </RadzenStack>
         <RadzenStack AlignItems="AlignItems.Center" class="rz-mx-auto rz-my-3" Gap="0.5rem">
-            <RadzenImage Path="https://avatar.iran.liara.run/public/35" Style="width: 12rem;" AlternateText="avatar" />
-           
+            <RadzenImage Path="@firstEmployee.Avatar" Style="width: 12rem;" AlternateText="avatar" />
+            <RadzenText><strong>@firstEmployee.Name</strong> </RadzenText>
             <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem" Style="padding: 0.5rem;">
            
                 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
                     <RadzenText><strong>Rank</strong> </RadzenText>
-                    <RadzenText class="rz-font-weight-light" Text="1" />
+                    <RadzenText class="rz-font-weight-light">@firstEmployee.Rank</RadzenText>
                 </RadzenStack>
                
                 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Style="border-left: 1px solid #ddd; height: 2rem; margin: 0 0.5rem;">
@@ -26,7 +29,7 @@
 
                 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
                     <RadzenText><strong>Commends</strong></RadzenText>
-                    <RadzenText class="rz-font-weight-light" Text="50" />
+                    <RadzenText class="rz-font-weight-light">@firstEmployee.TotalCommends</RadzenText>
                 </RadzenStack>
 
                
@@ -35,7 +38,7 @@
 
                 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
                     <RadzenText><strong>Points</strong></RadzenText>
-                    <RadzenText Class="rz-font-weight-light" Text="1200" />
+                    <RadzenText Class="rz-font-weight-light">@firstEmployee.Points</RadzenText>  
                 </RadzenStack>
             </RadzenStack>
 
@@ -45,13 +48,15 @@
             <RadzenPanelMenuItem Text="Home" Icon="home" Path="/home" Click="@(() => sidebarExpanded = false)" />
             <RadzenPanelMenuItem Text="Leaderboards" Icon="assessment" Path="/leaderboards" Click="@(() => sidebarExpanded = false)" />
             <RadzenPanelMenuItem Text="Quests" Icon="assignment_late" Path="/quests" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Rewards" Icon="card_giftcard" Path="/rewards" Click="@(() => sidebarExpanded = false)" />
             <RadzenPanelMenuItem Text="Profile" Icon="account_circle" Path="/profile" Click="@(() => sidebarExpanded = false)" />
-            <RadzenPanelMenuItem Text="Commend" Icon="done" Path="/Commends" Click="@(() => sidebarExpanded = false)" />
+            <RadzenPanelMenuItem Text="Commend" Icon="done" Path="/commends" Click="@(() => sidebarExpanded = false)" />
             <RadzenPanelMenuItem Text="Help" Icon="help" Path="/help" Click="@(() => sidebarExpanded = false)" />
         </RadzenPanelMenu>
-        <RadzenFooter>
-            <RadzenPanelMenuItem Text="Logout" Icon="exit_to_app" Path="/" Click="@(() => sidebarExpanded = false)" />
-        </RadzenFooter>
+     
+        <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="margin-top: auto; padding: 1rem;">
+            <RadzenButton Icon="logout" Text="Logout" ButtonStyle="ButtonStyle.Success" Variant="Variant.Text" Click="@Logout" />
+        </RadzenStack>
     </RadzenSidebar>
     <RadzenBody style="overflow-x: hidden;">
         @Body
@@ -63,11 +68,78 @@
 </RadzenLayout>
 
 @code {
+
     bool sidebarExpanded { get; set; }
+    private string HeaderText;
+    private Employee firstEmployee;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch all employees and select the first one
+        var employees = _EmployeeService.GetAllEmployees();
+        if (employees != null && employees.Count > 0)
+        {
+            firstEmployee = employees[0];
+        }
+    }
+
+    private void Logout()
+    {
+        // Navigate to the logout route
+        NavigationManager.NavigateTo("/");
+    }
 
     protected override void OnInitialized()
     {
         sidebarExpanded = false;
+        SetHeaderTextBasedOnRoute();
+        NavigationManager.LocationChanged += HandleLocationChanged;
         base.OnInitialized();
+    }
+
+    private void SetHeaderTextBasedOnRoute()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var currentPage = uri.AbsolutePath.Trim('/');
+
+        switch (currentPage)
+        {
+            case "":
+            case "home":
+                HeaderText = "Home";
+                break;
+            case "leaderboards":
+                HeaderText = "Leaderboards";
+                break;
+            case "quests":
+                HeaderText = "Quests";
+                break;
+            case "profile":
+                HeaderText = "Profile";
+                break;
+            case "help":
+                HeaderText = "Help";
+                break;
+            case "commends":
+                HeaderText = "Commends";
+                break;
+            case "rewards":
+                HeaderText = "Rewards";
+                break;
+            default:
+                HeaderText = "Page Not Found";
+                break;
+        }
+    }
+
+    private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        SetHeaderTextBasedOnRoute();
+        StateHasChanged(); // Refresh the component
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= HandleLocationChanged;
     }
 }
