@@ -26,8 +26,9 @@
                     <RadzenColumn Size="5" Style="padding: 0;">
                         <RadzenCard Style="padding: 0; overflow: hidden; height: 100%; border: none;">
                             <div style="position: relative; width: 100%; height: 100%; margin: 0;">
-                                <RadzenBadge Text="@reward.Category"
-                                             Style="background-color: #28a745; color: white; padding: 3px 7px; border-radius: 5px; position: absolute; top: 10px; left: 10px; z-index: 1; margin: 0;" />
+                                    <RadzenBadge Text="@reward.Category"
+                                                 Style="@GetCategoryStyle(reward.Category)" />
+
                                 <RadzenImage Path="@reward.ImageUrl"
                                              Style="width: 100%; height: 100%; object-fit: cover; margin: 0;" />
                             </div>
@@ -90,6 +91,20 @@
             CloseOnClick = true
         });
     }
+    private string GetCategoryStyle(string category)
+    {
+        switch (category)
+        {
+            case "Food":
+                return "background-color: #ff6347; color: white; padding: 3px 7px; border-radius: 5px; position: absolute; top: 10px; left: 10px; z-index: 1; margin: 0;"; // Tomato
+            case "Drinks":
+                return "background-color: #1e90ff; color: white; padding: 3px 7px; border-radius: 5px; position: absolute; top: 10px; left: 10px; z-index: 1; margin: 0;"; // DodgerBlue
+            default:
+                return "background-color: #28a745; color: white; padding: 3px 7px; border-radius: 5px; position: absolute; top: 10px; left: 10px; z-index: 1; margin: 0;";
+        }
+    }
+
+
     // private async Task OpenSideDialog()
     // {
     //     await DialogService.OpenSideAsync<FilterDialog>("Filter", options: new SideDialogOptions
