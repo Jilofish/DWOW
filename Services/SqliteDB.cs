@@ -36,14 +36,15 @@ public class SqliteDB
     {
         for (int i = 0; i < rows; i++)
         {
+            var ran = new Random();
             Reward candy = new()
             {
-                Name = $"Food {i + 1}",
-                Category = "Food",
-                Description = "Nom nom",
-                Points = 10 * i,
-                Quantity = 1 * i,
-                ImageUrl = "https://img.freepik.com/premium-vector/cute-burger-cartoon-icon-illustration-food-icon-concept-isolated-flat-cartoon-style_138676-1437.jpg"
+                Name = $"{(i % 2 == 0 ? "Food" : "Drinks")} {i + 1}",
+                Category = $"{(i % 2 == 0 ? "Food" : "Drinks")}",
+                Description = $"{(i % 2 == 0 ? "nom nom" : "guk guk")}",
+                Points = 10 * i * ran.Next(10),
+                Quantity = 1 * ran.Next(100),
+                ImageUrl = $"{( i % 2 == 0 ? "https://img.freepik.com/premium-vector/cute-burger-cartoon-icon-illustration-food-icon-concept-isolated-flat-cartoon-style_138676-1437.jpg" : "https://static.vecteezy.com/system/resources/previews/008/971/135/original/cute-coffee-cup-cartoon-icon-illustration-food-and-drink-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg")}"
             };
             Reward rew = await GetByConditionAsync<Reward>(x => x.Name == candy.Name);
             if(rew is null) await db.InsertAsync(candy);

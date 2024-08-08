@@ -15,7 +15,7 @@ public partial class FilterDialog : IAsyncDisposable
 
     protected override void OnInitialized()
     {
-        CategoryOptions ??= ["All", "Food", "Category2"];
+        CategoryOptions ??= ["All", "Food", "Drinks"];
         base.OnInitialized();
     }
 

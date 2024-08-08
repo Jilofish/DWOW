@@ -90,9 +90,13 @@ h1:focus {
     --rz-notification-success-background-color: rbga(0,0,0,1);
 }*/
 
-.rz-notification-success .rz-notification-item {
+.rz-notification-warn .rz-notification-item {
     color: rgba(0,0,0,1) !important;
     background-color: rgba(240,240,240,1) !important;
+}
+
+.rz-notification-success .rz-notification-item {
+    color: rgba(0,0,0,1) !important;
 }
 
 .rz-notification-icon, .rz-notification-close {
