@@ -10,34 +10,35 @@
             <RadzenText Class="rz-font-weight-bold" Text="Leaderboards" />
             <RadzenIcon Icon=@(showTop3 ? "expand_less" : "expand_more") @onclick="ToggleTop3" />
         </RadzenStack>
-
-        <RadzenStack AlignItems="AlignItems.Center" Gap="1rem" Style="position: relative;" class="w-100">
-            <RadzenDataList TItem="Employee" Data="TopEmployees.Take(3)" WrapItems="true" Visible="@showTop3" Style="position: sticky; top: 0; z-index: 99" class="w-100">
-                <Template Context="employee">
-                    <RadzenCard Style=@($"border: 2px solid; border-color: {(employee.Rank == 1 ? "gold" : employee.Rank == 2 ? "silver" : employee.Rank == 3 ? "#CD7F32" : "#006400")}; cursor: pointer; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.8); width: 100%;") @onclick="@(() => ShowEmployeeDetails(employee))">
-                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" class="w-100">
-                            <RadzenImage Path="@employee.Avatar" Style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
-                            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="flex: 1;">
-                                <RadzenText TextStyle="TextStyle.H5" Text="@employee.Name" />
+            
+            <RadzenStack AlignItems="AlignItems.Center" Gap="1rem" Style="position: relative;" class="w-100">
+            @if (showTop3)
+            {
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.End" Gap="1rem" class="w-100">
+                    @foreach (var employee in TopEmployees.Take(3).OrderBy(e => e.Rank))
+                    {
+                        <RadzenCard Style=@($"border: 2px solid; border-color: {(employee.Rank == 1 ? "gold" : employee.Rank == 2 ? "silver" : employee.Rank == 3 ? "#CD7F32" : "#006400")}; cursor: pointer; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.8); width: 30%; height: {(employee.Rank == 1 ? "250px" : employee.Rank == 2 ? "215px" : "175px")}; order: {(employee.Rank == 2 ? "1" : employee.Rank == 1 ? "2" : "3")};") @onclick="@(() => ShowEmployeeDetails(employee))">
+                            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0.3rem" class="h-100 w-100">
+                                <RadzenImage Path="@employee.Avatar" Style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
+                                <RadzenText TextStyle="TextStyle.H6" Text="@employee.Name" />
                                 <RadzenText>Points: @employee.Points</RadzenText>
+                                <RadzenText TextStyle="TextStyle.H6" Style="text-align: center;">@employee.Rank</RadzenText>
                             </RadzenStack>
-                            <RadzenText TextStyle="TextStyle.H5" Style="flex: 0 0 25px; text-align: center;">#@employee.Rank</RadzenText>
-                        </RadzenStack>
-                    </RadzenCard>
-                </Template>
-            </RadzenDataList>
-
+                        </RadzenCard>
+                    }
+                </RadzenStack>
+            }
             <RadzenDataList TItem="Employee" Data="TopEmployees.Skip(3)" WrapItems="true" class="w-100">
                 <Template Context="employee">
                     <RadzenCard Style=@($"border: 2px solid; border-color: {(employee.Rank == 1 ? "gold" : employee.Rank == 2 ? "silver" : employee.Rank == 3 ? "#CD7F32" : "#006400")}; cursor: pointer;") @onclick="@(() => ShowEmployeeDetails(employee))"
                                 class="w-100">
-                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" class="w-100">
+                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem" class="w-100">
                             <RadzenImage Path="@employee.Avatar" Style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;" AlternateText="Employee Avatar" />
                             <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Start" Style="flex: 1;">
-                                <RadzenText TextStyle="TextStyle.H5" Text="@employee.Name" />
+                                <RadzenText TextStyle="TextStyle.H6" Text="@employee.Name" />
                                 <RadzenText>Points: @employee.Points</RadzenText>
                             </RadzenStack>
-                            <RadzenText TextStyle="TextStyle.H5" Style="flex: 0 0 25px; text-align: center;">#@employee.Rank</RadzenText>
+                            <RadzenText TextStyle="TextStyle.H6" Style="flex: 0 0 12.5px; text-align: center;">@employee.Rank</RadzenText>
                         </RadzenStack>
                     </RadzenCard>
                 </Template>
