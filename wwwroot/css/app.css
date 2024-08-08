@@ -98,3 +98,7 @@ h1:focus {
 .rz-notification-icon, .rz-notification-close {
     display: none !important;
 }
+
+.rz-button.rz-primary {
+    background-color: green !important;
+}

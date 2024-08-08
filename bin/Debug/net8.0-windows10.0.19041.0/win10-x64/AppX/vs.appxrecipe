@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-08-07T02:42:21.526</Modified>
+      <Modified>2024-08-08T03:38:54.112</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-08-06T08:43:15.377</Modified>
+      <Modified>2024-08-08T02:08:32.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.runtimeconfig.json">
       <PackagePath>DWOW.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.dll">
       <PackagePath>DWOW.dll</PackagePath>
-      <Modified>2024-08-07T02:42:20.309</Modified>
+      <Modified>2024-08-08T03:38:53.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DWOW.exe</PackagePath>
-      <Modified>2024-08-07T02:42:20.436</Modified>
+      <Modified>2024-08-08T03:38:53.766</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -56,7 +56,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
-      <Modified>2024-07-29T06:10:12.033</Modified>
+      <Modified>2024-08-08T03:27:38.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
@@ -308,7 +308,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.deps.json">
       <PackagePath>DWOW.deps.json</PackagePath>
-      <Modified>2024-08-06T08:43:15.284</Modified>
+      <Modified>2024-08-08T02:08:32.521</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

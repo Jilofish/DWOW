@@ -11,6 +11,8 @@ public partial class Rewards
     private List<Reward> _filteredRewards { get; set; }
     private List<Reward> _allRewards { get; set; }
     private string _selectedCategory { get; set; }
+    [Inject] NotificationService _NotifService { get; set; }
+    [Inject] DialogService dialogService { get; set; }
 
     private void ApplySearch(string value)
     {
@@ -39,7 +41,7 @@ public partial class Rewards
         await base.OnAfterRenderAsync(firstRender);
     }
 
-    private async Task OpenSideDialog()
+    async Task OpenSideDialog()
     {
         await DialogService.OpenSideAsync<FilterDialog>(
             "Filter",
@@ -65,9 +67,5 @@ public partial class Rewards
         StateHasChanged();
     }
 
-    void ClaimReward(Reward reward)
-    {
-        // Logic to claim the reward, such as updating the quantity and notifying the user
-    }
 
 }

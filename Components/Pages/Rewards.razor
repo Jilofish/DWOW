@@ -4,16 +4,16 @@
 @inject DialogService DialogService
 
 <RadzenStack AlignItems="AlignItems.Center" class="w-100">
-    <RadzenRow class="w-100">
-        <RadzenColumn Size="10">
+    <RadzenRow class="w-100" Style="position: relative;">
+        <RadzenColumn Size="11">
             <RadzenTextBox Placeholder="Search..."
                            @bind-Value="_searchTerm"
                            Change="@ApplySearch"
                            Style="width: 100%; color: black;" />
         </RadzenColumn>
-        <RadzenColumn Size="2">
-            <RadzenButton Icon="filter_list" Click="@OpenSideDialog" />
-        </RadzenColumn>
+        <div style="position: absolute; right: 0;">
+            <RadzenButton Icon="filter_list" Click="@OpenSideDialog" Style="background-color: green; width: 40px; height: 40px;" />
+        </div>
     </RadzenRow>
 
     <RadzenStack>
@@ -41,8 +41,9 @@
                         <RadzenText class="rz-mb-2"><strong>Points: @reward.Points</strong></RadzenText>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="margin-right: auto; text-align: start;">Qty: @reward.Quantity</div>
-                            <RadzenButton Text="Claim" Click="() => ClaimReward(reward)"
-                                          Style="background-color: #6c757d; color: white; padding: 5px 10px; font-size: 14px;" />
+                                <RadzenButton Text="Claim" Click="@(args => ShowConfirmationDialog(reward))"
+                                              Style="background-color: green; color: white; padding: 5px 10px; font-size: 14px;" />
+
                         </div>
 
                     </RadzenColumn>
@@ -58,6 +59,37 @@
 </RadzenStack>
 
 @code {
+
+    private async Task ShowConfirmationDialog(Reward reward)
+    {
+        var result = await DialogService.Confirm("Are you sure you want to claim this reward?", "Confirm",
+    new ConfirmOptions()
+        {
+            OkButtonText = "Confirm",
+            CloseDialogOnOverlayClick = true,
+            CancelButtonText = "Cancel",
+            
+        });
+
+        if (result == true)
+        {
+            ClaimReward(reward);
+        }
+    }
+
+    void ClaimReward(Reward reward)
+    {
+
+        _NotifService.Notify(new NotificationMessage
+        {
+            Style = "width: 90%; border-radius: 20px; position: fixed; top: 5px; left: 50%; transform: translateX(-50%); color: white;",
+            Severity = NotificationSeverity.Success,
+            Summary = "Success",
+            Detail = "Reward claimed successfully!",
+            Duration= 3000,
+            CloseOnClick = true
+        });
+    }
     // private async Task OpenSideDialog()
     // {
     //     await DialogService.OpenSideAsync<FilterDialog>("Filter", options: new SideDialogOptions

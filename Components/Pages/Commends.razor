@@ -28,7 +28,7 @@
     {
         if (lastCommendationDate == null || (DateTime.Now - lastCommendationDate.Value).TotalDays >= 30)
         {
-            bool commended = await DialogService.Confirm("Confirm Commendation") ?? false;
+            bool commended = await DialogService.Confirm("Are you sure you want to comment this employee?","Confirm", new ConfirmOptions() { OkButtonText = "Commend", CancelButtonText = "Cancel" }) ?? false;
             if (commended)
             {
                 lastCommendationDate = DateTime.Now;
