@@ -24,6 +24,7 @@ public class SqliteDB
     {
         await db.DropTableAsync<Reward>();
         await db.CreateTableAsync<Reward>();
+        await db.CreateTableAsync<Credential>();
         //await db.CreateTableAsync<SQliteClassParent>();
     }
 

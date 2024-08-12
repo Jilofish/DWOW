@@ -14,6 +14,8 @@
 </div>
 
 @code {
+
+    //initialize if the creds is saved or if the table have content
     private List<Quest> QuestsList => _QuestService.GetQuests();
     private Quest SelectedQuest;
 

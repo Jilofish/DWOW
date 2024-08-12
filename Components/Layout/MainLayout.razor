@@ -83,10 +83,13 @@
         }
     }
 
-    private void Logout()
+    private async Task Logout()
     {
         // Navigate to the logout route
-        NavigationManager.NavigateTo("/");
+        await App.Db.DropTable<Credential>();
+        await App.Db.CreateTable<Credential>();
+
+        NavigationManager.NavigateTo("/", true, true);
     }
 
     protected override void OnInitialized()

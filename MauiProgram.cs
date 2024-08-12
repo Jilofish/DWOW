@@ -23,6 +23,7 @@ public static class MauiProgram
         //builder.Services.AddSingleton<IMapper>(mapperConfig);
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddRadzenComponents();
+        builder.Services.AddScoped<INotif, Notif>();
         builder.Services.AddScoped<IQuestService,QuestService>();
         builder.Services.AddScoped<IEmployeeService,EmployeeService>();
         builder.Services.AddScoped<IRewardsService,RewardsService>();

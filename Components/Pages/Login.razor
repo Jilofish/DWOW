@@ -1,6 +1,4 @@
-﻿@inject NavigationManager NavigationManager
-
-@page "/"
+﻿@page "/"
 
 <RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center" class="w-100" Style="height: 100vh">
     <RadzenStack class="rz-my-12 rz-mt-5 rz-mx-auto rz-border-radius-6 rz-shadow-10"
@@ -9,15 +7,16 @@
             <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" class="rz-strong rz-color-white rz-mb-0">Login</RadzenText>
         </RadzenCard>
 
-        <div class="rz-p-0 rz-p-12">
-            <RadzenTemplateForm TItem="Model" Data=@model Submit=@OnSubmit InvalidSubmit=@OnInvalidSubmit>
+        <div class="rz-p-10">
+            <RadzenTemplateForm TItem="Credential" Data=@model Submit=@OnSubmit InvalidSubmit=@OnInvalidSubmit>
                 <RadzenStack Gap="1rem" class="rz-p-m-12">
-                    <RadzenFormField Text="Username" Variant="@variant">
+                    <RadzenText TextStyle="TextStyle.H6" class="rz-pl-4" Visible="@(_creds is not null && _creds.Count > 0)"><strong>@model.Username</strong> </RadzenText>
+                    <RadzenFormField Text="Username" Variant="@variant" Visible="@(_creds is null || _creds.Count == 0)">
                         <ChildContent>
-                            <RadzenTextBox Name="UserName" @bind-Value=@model.UserName class="w-100 w-md-50" />
+                            <RadzenTextBox Name="Username" @bind-Value=@model.Username class="w-100 w-md-50" />
                         </ChildContent>
                         <Helper>
-                            <RadzenRequiredValidator Component="UserName" Text="Username is required." />
+                            <RadzenRequiredValidator Component="Username" Text="Username is required." />
                         </Helper>
                     </RadzenFormField>
                     <RadzenFormField Text="Password" Variant="@variant">
@@ -41,41 +40,5 @@
 </RadzenStack>
 
 @code {
-    [Inject]
-    NotificationService _NotifService { get; set; } = default!; 
-    Variant variant = Variant.Outlined;
 
-    class Model
-    {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-    }
-
-    Model model = new Model();
-
-    private void OnSubmit(Model model)
-    {
-        
-        ShowCustomNotification();
-    }
-
-    void ShowCustomNotification()
-
-    {
-        _NotifService.Notify(new NotificationMessage
-            {
-                Style = "width: 90%; border-radius: 20px; position: fixed; top: 5px; left: 50%; transform: translateX(-50%); color: white;",
-                Severity = NotificationSeverity.Warning,
-                Summary = "Logged in",
-                Detail = $"Logged in successfully at {DateTime.Now}",
-                Duration = 5000,
-                CloseOnClick = true,
-            });
-        NavigationManager.NavigateTo("/home");
-    }
-
-    void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
-    {
-        //console.Log($"InvalidSubmit: {JsonSerializer.Serialize(args, new JsonSerializerOptions() { WriteIndented = true })}");
-    }
 }

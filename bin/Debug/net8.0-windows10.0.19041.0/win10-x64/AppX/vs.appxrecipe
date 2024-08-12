@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-08-09T08:37:36.719</Modified>
+      <Modified>2024-08-12T06:32:07.181</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-08-08T06:52:19.721</Modified>
+      <Modified>2024-08-12T03:34:36.062</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.runtimeconfig.json">
       <PackagePath>DWOW.runtimeconfig.json</PackagePath>
-      <Modified>2024-08-06T08:43:15.289</Modified>
+      <Modified>2024-08-12T03:34:35.711</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.dll">
       <PackagePath>DWOW.dll</PackagePath>
-      <Modified>2024-08-09T08:37:36.353</Modified>
+      <Modified>2024-08-12T06:32:06.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DWOW.exe</PackagePath>
-      <Modified>2024-08-09T08:37:36.364</Modified>
+      <Modified>2024-08-12T06:32:06.788</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -76,23 +76,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:11.709</Modified>
+      <Modified>2024-08-12T03:33:14.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:11.748</Modified>
+      <Modified>2024-08-12T03:33:14.892</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:11.800</Modified>
+      <Modified>2024-08-12T03:33:14.916</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:11.872</Modified>
+      <Modified>2024-08-12T03:33:14.950</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:12.073</Modified>
+      <Modified>2024-08-12T03:33:15.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -100,215 +100,215 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-08-06T08:43:14.151</Modified>
+      <Modified>2024-08-12T03:33:17.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.140</Modified>
+      <Modified>2024-08-12T03:33:17.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.139</Modified>
+      <Modified>2024-08-12T03:33:17.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.139</Modified>
+      <Modified>2024-08-12T03:33:17.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.139</Modified>
+      <Modified>2024-08-12T03:33:17.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.138</Modified>
+      <Modified>2024-08-12T03:33:17.257</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.146</Modified>
+      <Modified>2024-08-12T03:33:17.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.146</Modified>
+      <Modified>2024-08-12T03:33:17.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.145</Modified>
+      <Modified>2024-08-12T03:33:17.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.146</Modified>
+      <Modified>2024-08-12T03:33:17.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.146</Modified>
+      <Modified>2024-08-12T03:33:17.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.148</Modified>
+      <Modified>2024-08-12T03:33:17.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.147</Modified>
+      <Modified>2024-08-12T03:33:17.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.147</Modified>
+      <Modified>2024-08-12T03:33:17.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.147</Modified>
+      <Modified>2024-08-12T03:33:17.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.147</Modified>
+      <Modified>2024-08-12T03:33:17.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.150</Modified>
+      <Modified>2024-08-12T03:33:17.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.150</Modified>
+      <Modified>2024-08-12T03:33:17.269</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.150</Modified>
+      <Modified>2024-08-12T03:33:17.269</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.149</Modified>
+      <Modified>2024-08-12T03:33:17.269</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.149</Modified>
+      <Modified>2024-08-12T03:33:17.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.149</Modified>
+      <Modified>2024-08-12T03:33:17.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.149</Modified>
+      <Modified>2024-08-12T03:33:17.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.148</Modified>
+      <Modified>2024-08-12T03:33:17.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.148</Modified>
+      <Modified>2024-08-12T03:33:17.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.148</Modified>
+      <Modified>2024-08-12T03:33:17.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.142</Modified>
+      <Modified>2024-08-12T03:33:17.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.142</Modified>
+      <Modified>2024-08-12T03:33:17.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.142</Modified>
+      <Modified>2024-08-12T03:33:17.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.142</Modified>
+      <Modified>2024-08-12T03:33:17.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.142</Modified>
+      <Modified>2024-08-12T03:33:17.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.144</Modified>
+      <Modified>2024-08-12T03:33:17.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.144</Modified>
+      <Modified>2024-08-12T03:33:17.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.143</Modified>
+      <Modified>2024-08-12T03:33:17.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.143</Modified>
+      <Modified>2024-08-12T03:33:17.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.143</Modified>
+      <Modified>2024-08-12T03:33:17.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.145</Modified>
+      <Modified>2024-08-12T03:33:17.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.145</Modified>
+      <Modified>2024-08-12T03:33:17.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.145</Modified>
+      <Modified>2024-08-12T03:33:17.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.144</Modified>
+      <Modified>2024-08-12T03:33:17.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.144</Modified>
+      <Modified>2024-08-12T03:33:17.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.141</Modified>
+      <Modified>2024-08-12T03:33:17.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.141</Modified>
+      <Modified>2024-08-12T03:33:17.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.141</Modified>
+      <Modified>2024-08-12T03:33:17.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.140</Modified>
+      <Modified>2024-08-12T03:33:17.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.140</Modified>
+      <Modified>2024-08-12T03:33:17.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\avatar.scale-100.png">
       <PackagePath>avatar.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.138</Modified>
+      <Modified>2024-08-12T03:33:17.257</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.152</Modified>
+      <Modified>2024-08-12T03:33:17.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.152</Modified>
+      <Modified>2024-08-12T03:33:17.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.151</Modified>
+      <Modified>2024-08-12T03:33:17.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.151</Modified>
+      <Modified>2024-08-12T03:33:17.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-08-06T08:43:14.151</Modified>
+      <Modified>2024-08-12T03:33:17.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.deps.json">
       <PackagePath>DWOW.deps.json</PackagePath>
-      <Modified>2024-08-08T06:52:19.274</Modified>
+      <Modified>2024-08-12T03:34:35.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DWOW")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+15b8401d25acb58294ab26624bbe49bce3915179")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+799d2e7405a6024c4e022aa51370f11bc6d73e1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DWOW")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DWOW")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
