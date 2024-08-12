@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-08-08T06:52:20.040</Modified>
+      <Modified>2024-08-09T08:37:36.719</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DWOW.dll">
       <PackagePath>DWOW.dll</PackagePath>
-      <Modified>2024-08-08T06:52:17.660</Modified>
+      <Modified>2024-08-09T08:37:36.353</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DWOW.exe</PackagePath>
-      <Modified>2024-08-08T06:52:17.782</Modified>
+      <Modified>2024-08-09T08:37:36.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\manny\source\repos\DWOW\DWOW\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
